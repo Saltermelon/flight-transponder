@@ -31,3 +31,4 @@ SWEP.SlotPos            =   996
 SWEP.DrawAmmo           =   false
 SWEP.DrawCrosshair      =   false
 SWEP.Spawnable          =   true
+SWEP.AdminSpawnable     =   true
