@@ -1,34 +1,41 @@
-AddCSLuaFile()
+if (SERVER) then
+    AddCSLuaFile()
 
-SWEP.Author             =   "Saltermelon"
-SWEP.Base               =   "weapon_base"
+    SWEP.HoldType       =   "passive"
+    SWEP.Weight         =   5
+    SWEP.AutoSwitchTo   =   false
+    SWEP.AutoSwitchFrom =   false 
+
+end
+
 SWEP.PrintName          =   "Transponder"
---TODO
-SWEP.Instructions       =   [[
-
-]]
---TODO
-SWEP.ViewModel          =   ""
-SWEP.ViewModelFlip      =   false
--- Subject to change if it would look better with the hands
-SWEP.UseHands           =   false
---TODO
-SWEP.WorldModel         =   ""
---TODO, maybe pistol?
-SWEP.SetHoldType        =   ""
-SWEP.Weight             =   "1"
---If having problems, try switching
-SWEP.AutoSwitchTo       =   true
-SWEP.AutoSwitchFrom     =   false
---Look for other type of grip if pistol looks odd
-SWEP.SetHoldType        =   "pistol"
-SWEP.Weight             =   "1"
---Change these around if something is broken
-SWEP.AutoSwitchTo       =   true
-SWEP.AutoSwitchFrom     =   false
+SWEP.Author             =   "Saltermelon"
+SWEP.Instructions       =   "Left click to toggle transponder on and off."
+SWEP.PrimaryAmmo        =   "none"
+SWEP.HoldType           =   "passive"
 SWEP.Slot               =   4
 SWEP.SlotPos            =   996
-SWEP.DrawAmmo           =   false
+SWEP.IconLetter         =   "C"
+SWEP.ViewModelFOV       =   0
+SWEP.Category           =   "[SALT] Sweps"
 SWEP.DrawCrosshair      =   false
-SWEP.Spawnable          =   true
-SWEP.AdminSpawnable     =   true
+SWEP.WorldModel         =   ""
+SWEP.ViewModel          =   ""
+SWEP.Primary.ExtraMags = 0
+SWEP.Primary.DefaultClip = 0
+SWEP.Secondary.ExtraMags = 0
+SWEP.Secondary.DefaultClip = 0
+SWEP.AdminSpawnable = true 
+SWEP.Spawnable = true
+
+function SWEP:CustomAmmoDisplay()
+	self.AmmoDisplay = self.AmmoDisplay or {}
+	self.AmmoDisplay.Draw = false
+	return self.AmmoDisplay
+end
+
+function SWEP:PrimaryAttack()
+end
+
+function SWEP:SecondaryAttack()
+end
