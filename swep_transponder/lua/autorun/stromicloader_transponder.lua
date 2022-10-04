@@ -1,4 +1,4 @@
-local dir = "secure_comms/"
+local dir = "flighttransponder/"
 if SERVER then
 	local files = file.Find(dir .. "*", "LUA")
 	for k, v in pairs(files) do
